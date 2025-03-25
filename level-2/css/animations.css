@@ -1,0 +1,413 @@
+/* === ANIMATIONS CSS === */
+
+/* Animation Container */
+.animation-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 400px; /* Adjusted height */
+  padding: var(--space-lg);
+  overflow: hidden;
+}
+
+/* Community Animation Components */
+.community-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-lg);
+  position: absolute;
+  width: 300px;
+  transition: all var(--transition-slow);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.request-card {
+  border-left: 4px solid var(--secondary);
+  /* Position request card on the left */
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.offer-card:nth-of-type(1) {
+  border-left: 4px solid var(--primary);
+  /* Position first offer card on the right side, top */
+  top: 20px;
+  right: 50px;
+  z-index: 5;
+}
+
+.offer-card:nth-of-type(2) {
+  border-left: 4px solid var(--primary);
+  /* Position second offer card on the right side, middle */
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.offer-card:nth-of-type(3) {
+  border-left: 4px solid var(--primary);
+  /* Position third offer card on the right side, bottom */
+  bottom: 20px;
+  right: 50px;
+  z-index: 5;
+}
+
+.match-card {
+  border-left: 4px solid var(--accent);
+  /* Position match card in the center */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  z-index: 8; /* Above all other cards */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease;
+  /* Make the match card slightly larger */
+  max-width: 320px;
+}
+
+/* Selected card styling */
+.selected-offer {
+  border-left: 4px solid var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(46, 196, 182, 0.3), var(--shadow-md) !important;
+  z-index: 7 !important;
+  transition: all 0.5s ease !important;
+}
+
+.request-selected {
+  border-left: 4px solid var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(46, 196, 182, 0.3), var(--shadow-md) !important;
+  transition: all 0.5s ease !important;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.card-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: var(--space-md);
+  object-fit: cover;
+}
+
+.card-user h4 {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.card-user p {
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.card-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-bottom: var(--space-sm);
+}
+
+.request-badge {
+  background-color: #ffebe6;
+  color: var(--secondary);
+}
+
+.offer-badge {
+  background-color: #e6f0ff;
+  color: var(--primary);
+}
+
+.match-badge {
+  background-color: #e6faf8;
+  color: var(--accent);
+}
+
+.card-title {
+  margin-bottom: var(--space-sm);
+  font-size: 1.2rem;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: var(--gray-dark);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--gray-light);
+  font-size: 0.8rem;
+}
+
+.offer-btns {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.match-icon {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  background-color: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(46, 196, 182, 0.5);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.5s ease;
+  z-index: 10;
+  /* Positioning in center by default */
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+
+.connector-line {
+  height: 3px;
+  background-color: var(--accent);
+  position: absolute;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: all 0.5s ease;
+  z-index: 5;
+  /* Position in middle by default */
+  top: 50%;
+  left: 25%;
+}
+
+/* Animation class adjustments */
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s forwards;
+}
+
+.animate-fadeOutDown {
+  animation: fadeOutDown 0.6s forwards;
+}
+
+.animate-slideInFromLeft {
+  animation: slideInFromLeft 0.6s forwards;
+}
+
+.animate-slideInFromRight {
+  animation: slideInFromRight 0.6s forwards;
+}
+
+.animate-popIn {
+  animation: popIn 0.6s forwards;
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 2s infinite;
+}
+
+/* When match card is shown */
+.animate-showMatch {
+  visibility: visible;
+  animation: popInCenter 0.8s forwards;
+  z-index: 20;
+}
+
+/* Checkmarks and X icons */
+.icon-check, .icon-x {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.icon-check::before {
+  content: '✓';
+  color: var(--accent);
+}
+
+.icon-x::before {
+  content: '✕';
+  color: #ff6b6b;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes popInCenter {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(46, 196, 182, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(46, 196, 182, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(46, 196, 182, 0.5);
+  }
+}
+
+/* Responsive Styles for Animation */
+@media (max-width: 992px) {
+  .animation-container {
+    min-height: 450px;
+  }
+  
+  .community-card {
+    width: 280px;
+  }
+  
+  .request-card {
+    left: 30px;
+  }
+  
+  .offer-card:nth-of-type(1),
+  .offer-card:nth-of-type(2),
+  .offer-card:nth-of-type(3) {
+    right: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .animation-container {
+    min-height: 800px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .community-card {
+    width: 240px;
+  }
+  
+  /* Reposition for smaller screens */
+  .request-card {
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+  }
+  
+  .offer-card:nth-of-type(1) {
+    top: 230px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .offer-card:nth-of-type(2) {
+    top: 380px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .offer-card:nth-of-type(3) {
+    top: 530px;
+    bottom: auto;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .match-card {
+    top: 50%; /* Keep it centered vertically */
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+@media (max-width: 576px) {
+  .animation-container {
+    min-height: 820px;
+  }
+  
+  .community-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .match-card {
+    width: 280px;
+  }
+} 

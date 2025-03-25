@@ -3,87 +3,492 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comm-It Level 2 - Coming Soon</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .container {
-            max-width: 800px;
-        }
-        
-        h1 {
-            color: #0066cc;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-        
-        .under-construction {
-            width: 100px;
-            height: 100px;
-            margin: 2rem auto;
-            animation: spin 4s linear infinite;
-        }
-        
-        @keyframes spin {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: #0066cc;
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #0055aa;
-        }
-    </style>
+    <title>Comm-It - Boston & Cambridge Local Community Platform</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
 </head>
 <body>
-    <div class="container">
-        <h1>Comm-It Level 2</h1>
-        
-        <div class="under-construction">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0066cc">
-                <path d="M12 3C10.3431 3 9 4.34315 9 6V7H15V6C15 4.34315 13.6569 3 12 3Z" />
-                <path d="M7 7V6C7 3.23858 9.23858 1 12 1C14.7614 1 17 3.23858 17 6V7H18C19.1046 7 20 7.89543 20 9V20C20 21.1046 19.1046 22 18 22H6C4.89543 22 4 21.1046 4 20V9C4 7.89543 4.89543 7 6 7H7ZM6 9V20H18V9H6Z" />
-            </svg>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container flex-between">
+            <a href="index.html" class="logo">
+                <img src="assets/logo/comm-it-logo.svg" alt="Comm-It Logo">
+                Comm-It
+            </a>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                    <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Join Waitlist</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
         </div>
-        
-        <p>The enhanced Comm-It landing page is currently under development.</p>
-        <p>Check back soon to see our upgraded design with interactive elements and sample community posts!</p>
-        
-        <a href="../index.html" class="btn">Back to Project Overview</a>
-    </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section" style="background-color: var(--primary-light); padding-top: var(--space-xxl);">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: var(--space-xl);">
+                <h1>Connect with Your Boston & Cambridge Community</h1>
+                <p style="max-width: 800px; margin: var(--space-md) auto;">
+                    A local platform designed exclusively for Boston and Cambridge residents to share offers, make requests, and strengthen neighborhood connections.
+                </p>
+                <div style="margin: var(--space-lg) 0;">
+                    <a href="#contact" class="btn btn-primary">Join Our Waitlist</a>
+                    <a href="#how-it-works" class="btn btn-outline" style="margin-left: var(--space-md);">Learn How It Works</a>
+                </div>
+            </div>
+            
+            <!-- Community Animation Showcase -->
+            <div class="animation-container">
+                <!-- Request Card -->
+                <div class="community-card request-card">
+                    <span class="card-badge request-badge">REQUEST</span>
+                    <div class="card-header">
+                        <img src="assets/images/avatar-1.jpg" alt="User Avatar" class="card-avatar">
+                        <div class="card-user">
+                            <h4>Sarah Johnson</h4>
+                            <p>Cambridge Resident</p>
+                        </div>
+                    </div>
+                    <h3 class="card-title">Need help moving a couch this weekend</h3>
+                    <p class="card-description">I just got a new couch delivered but need help moving it up to my 3rd floor apartment. Any neighbors free this Saturday afternoon?</p>
+                    <div class="card-footer">
+                        <span>Posted 2 hours ago</span>
+                        <span>Cambridge, MA</span>
+                    </div>
+                </div>
+                
+                <!-- Offer Cards -->
+                <div class="community-card offer-card">
+                    <span class="card-badge offer-badge">OFFER</span>
+                    <div class="card-header">
+                        <img src="assets/images/avatar-2.jpg" alt="User Avatar" class="card-avatar">
+                        <div class="card-user">
+                            <h4>Mike Rodriguez</h4>
+                            <p>Boston Resident</p>
+                        </div>
+                    </div>
+                    <h3 class="card-title">I can help on Saturday!</h3>
+                    <p class="card-description">I have a truck and I'm free after 2pm on Saturday. Happy to help a neighbor out.</p>
+                    <div class="card-footer">
+                        <div class="offer-btns">
+                            <button class="btn btn-sm btn-outline">Send Message</button>
+                            <button class="btn btn-sm btn-primary">Accept</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="community-card offer-card">
+                    <span class="card-badge offer-badge">OFFER</span>
+                    <div class="card-header">
+                        <img src="assets/images/avatar-3.jpg" alt="User Avatar" class="card-avatar">
+                        <div class="card-user">
+                            <h4>David Chen</h4>
+                            <p>Cambridge Resident</p>
+                        </div>
+                    </div>
+                    <h3 class="card-title">Can help Saturday at 3pm</h3>
+                    <p class="card-description">I live in the same neighborhood and can come by around 3pm on Saturday. I've helped with lots of moves before!</p>
+                    <div class="card-footer">
+                        <div class="offer-btns">
+                            <button class="btn btn-sm btn-outline">Send Message</button>
+                            <button class="btn btn-sm btn-primary">Accept</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="community-card offer-card">
+                    <span class="card-badge offer-badge">OFFER</span>
+                    <div class="card-header">
+                        <img src="assets/images/avatar-4.jpg" alt="User Avatar" class="card-avatar">
+                        <div class="card-user">
+                            <h4>Emma Clark</h4>
+                            <p>Cambridge Resident</p>
+                        </div>
+                    </div>
+                    <h3 class="card-title">Free on Saturday afternoon</h3>
+                    <p class="card-description">I'm available from 1-5pm on Saturday and could definitely help with a couch move. Let me know!</p>
+                    <div class="card-footer">
+                        <div class="offer-btns">
+                            <button class="btn btn-sm btn-outline">Send Message</button>
+                            <button class="btn btn-sm btn-primary">Accept</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Match Card -->
+                <div class="community-card match-card">
+                    <span class="card-badge match-badge">MATCH MADE!</span>
+                    <div style="text-align: center; margin: var(--space-sm) 0 var(--space-md) 0;">
+                        <div class="card-header" style="justify-content: center;">
+                            <img src="assets/images/avatar-1.jpg" alt="Sarah Avatar" class="card-avatar" style="margin-right: 5px; border: 2px solid var(--accent);">
+                            <img src="assets/images/avatar-3.jpg" alt="David Avatar" class="card-avatar" style="margin-right: 0; border: 2px solid var(--accent);">
+                        </div>
+                        <h3 class="card-title" style="text-align: center; margin-top: var(--space-md); color: var(--accent);">Sarah & David</h3>
+                    </div>
+                    <div style="text-align: center; margin: var(--space-md) 0; background-color: rgba(46, 196, 182, 0.08); padding: 12px; border-radius: 8px;">
+                        <span class="icon-check"></span> Help with moving couch scheduled for Saturday at 3pm
+                    </div>
+                    <p class="card-description" style="text-align: center; font-style: italic;">
+                        "Thanks to Comm-It for connecting us!"
+                    </p>
+                </div>
+                
+                <!-- Connector Line -->
+                <div class="connector-line"></div>
+                
+                <!-- Match Icon -->
+                <div class="match-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                
+                <!-- Animation Replay Button -->
+                <div style="position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%);">
+                    <button class="btn btn-sm btn-outline replay-animation">Replay Animation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>How Comm-It Works</h2>
+                <p>Connecting local residents with needs and offers in four simple steps</p>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title">1. Create Your Account</h3>
+                    <p>Sign up with proof of residence in Boston or Cambridge to join our trusted local community.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 11 12 14 22 4"></polyline>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title">2. Post Requests or Offers</h3>
+                    <p>Share what you need or what you can provide to the community, from help with tasks to items and services.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <polyline points="19 12 12 19 5 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title">3. Get Matched</h3>
+                    <p>Our platform connects those with needs to community members who can fulfill them, creating perfect matches.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title">4. Build Community</h3>
+                    <p>Rate your experiences, build your reputation, and strengthen neighborhood connections over time.</p>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: var(--space-xl);">
+                <a href="how-it-works.html" class="btn btn-outline">Learn More About How Comm-It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section" style="background-color: var(--light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Features</h2>
+                <p>Designed specifically for Boston and Cambridge communities</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card animate-on-scroll">
+                    <h3 class="card-title">Verified Local Community</h3>
+                    <p>Only residents with verified Boston or Cambridge addresses can join, ensuring a trusted network of real neighbors.</p>
+                    <ul style="margin-left: var(--space-md);">
+                        <li>Address verification system</li>
+                        <li>Local community focus</li>
+                        <li>Secure member profiles</li>
+                    </ul>
+                </div>
+                
+                <div class="card animate-on-scroll">
+                    <h3 class="card-title">Smart Matching Algorithm</h3>
+                    <p>Our intelligent system connects needs with offers based on location, timing, and compatibility for optimal community benefit.</p>
+                    <ul style="margin-left: var(--space-md);">
+                        <li>Proximity-based matching</li>
+                        <li>Availability coordination</li>
+                        <li>Skill and need alignment</li>
+                    </ul>
+                </div>
+                
+                <div class="card animate-on-scroll">
+                    <h3 class="card-title">Dual Posting System</h3>
+                    <p>Post both requests for help and offers of services in one unified platform to meet the community's diverse needs.</p>
+                    <ul style="margin-left: var(--space-md);">
+                        <li>Easy request creation</li>
+                        <li>Offer posting tools</li>
+                        <li>Category organization</li>
+                    </ul>
+                </div>
+                
+                <div class="card animate-on-scroll">
+                    <h3 class="card-title">Community Trust Building</h3>
+                    <p>Build reputation through reviews, verification badges, and community recognition that strengthens local connections.</p>
+                    <ul style="margin-left: var(--space-md);">
+                        <li>User rating system</li>
+                        <li>Verification badges</li>
+                        <li>Community recognition</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: var(--space-xl);">
+                <a href="features.html" class="btn btn-outline">View All Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Community Feedback</h2>
+                <p>What our early beta testers are saying about Comm-It</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        I've lived in Cambridge for years but never knew many of my neighbors until Comm-It. Through the platform, I was able to borrow tools, get help with a move, and even find someone to walk my dog when I was sick.
+                    </div>
+                    <div class="testimonial-user">
+                        <img src="assets/images/avatar-5.jpg" alt="Testimonial Avatar" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Jennifer Liu</h4>
+                            <p>Cambridge Resident, Beta Tester</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        As a new resident to Boston, Comm-It helped me connect with my community quickly. I offered my graphic design skills to help local businesses and in return received amazing restaurant recommendations and made some great friends.
+                    </div>
+                    <div class="testimonial-user">
+                        <img src="assets/images/avatar-6.jpg" alt="Testimonial Avatar" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Marcus Washington</h4>
+                            <p>Boston Resident, Beta Tester</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        I used Comm-It to find someone to watch my plants while I was away. Not only did my plants survive, but I met a neighbor who's now a close friend. This platform makes Boston feel like a small town in the best way possible.
+                    </div>
+                    <div class="testimonial-user">
+                        <img src="assets/images/avatar-7.jpg" alt="Testimonial Avatar" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Sophia Patel</h4>
+                            <p>Boston Resident, Beta Tester</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="slider-prev">&#10094;</button>
+                <button class="slider-next">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" style="background-color: var(--primary-light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Join Our Waitlist</h2>
+                <p>Be the first to know when Comm-It launches in your neighborhood</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div>
+                    <h3>Why Join Comm-It?</h3>
+                    <div class="icon-box">
+                        <div class="icon-box-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="icon-box-content">
+                            <h4 class="icon-box-title">Meet Your Neighbors</h4>
+                            <p>Connect with the people who live right in your community but whom you might never have met otherwise.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="icon-box">
+                        <div class="icon-box-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </div>
+                        <div class="icon-box-content">
+                            <h4 class="icon-box-title">Local Resources</h4>
+                            <p>Share and access resources right in your neighborhood, reducing waste and building community resilience.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="icon-box">
+                        <div class="icon-box-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="icon-box-content">
+                            <h4 class="icon-box-title">Strengthen Community</h4>
+                            <p>Build a stronger, more connected Boston and Cambridge through mutual aid and support.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Get Early Access</h3>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="neighborhood" class="form-label">Neighborhood</label>
+                            <select id="neighborhood" name="neighborhood" class="form-control" required>
+                                <option value="">Select your neighborhood</option>
+                                <option value="cambridge-central">Cambridge - Central Square</option>
+                                <option value="cambridge-harvard">Cambridge - Harvard Square</option>
+                                <option value="cambridge-inman">Cambridge - Inman Square</option>
+                                <option value="cambridge-kendall">Cambridge - Kendall Square</option>
+                                <option value="cambridge-porter">Cambridge - Porter Square</option>
+                                <option value="boston-allston">Boston - Allston</option>
+                                <option value="boston-backbay">Boston - Back Bay</option>
+                                <option value="boston-beacon">Boston - Beacon Hill</option>
+                                <option value="boston-downtown">Boston - Downtown</option>
+                                <option value="boston-fenway">Boston - Fenway</option>
+                                <option value="boston-southend">Boston - South End</option>
+                                <option value="other">Other Area</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interests" class="form-label">Your Interests (Optional)</label>
+                            <select id="interests" name="interests" class="form-control" multiple>
+                                <option value="offering-help">Offering Help to Neighbors</option>
+                                <option value="requesting-help">Requesting Help from Neighbors</option>
+                                <option value="skill-sharing">Skill Sharing</option>
+                                <option value="item-lending">Item Lending/Borrowing</option>
+                                <option value="local-events">Local Events</option>
+                                <option value="community-projects">Community Projects</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Join Waitlist</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo text-center">
+                <img src="assets/logo/comm-it-logo-white.svg" alt="Comm-It Logo" style="height: 60px;">
+            </div>
+            
+            <div class="grid grid-3">
+                <div>
+                    <h3>About Comm-It</h3>
+                    <p>A community platform designed to connect Boston and Cambridge residents through local requests and offers. Building stronger neighborhoods one connection at a time.</p>
+                </div>
+                
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="how-it-works.html" class="footer-link">How It Works</a></li>
+                        <li><a href="features.html" class="footer-link">Features</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="#contact" class="footer-link">Join Waitlist</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Contact Us</h3>
+                    <p>Have questions about Comm-It? Reach out to our team.</p>
+                    <p>Email: <a href="mailto:info@comm-it.example.com" class="footer-link">info@comm-it.example.com</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Comm-It. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
 </body>
 </html> 
